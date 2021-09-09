@@ -23,6 +23,7 @@ Macroprocessos
          Atividades
 
  
+ Para fazer o download dos arquivos, clique na função CODE > DOWNLOAD ZIP 
 
 Notação utilizada: BPMN™ v.2.0
 
