@@ -41,7 +41,7 @@ Este repositório conta com os seguintes diagramas:
 
 # Como referenciar os casos (ABNT NBR 6023:2018):
 
-MARTINS, K. W. C. (nome do processo). Diagrama de Processo. (ano do último update). Disponível em: https://github.com/ Acesso em (data de aceso)
+MARTINS, K. W. C. (nome do processo). Diagrama de Processo. (ano do último update). Disponível em: https://github.com/kleberwatanabe/processosgov Acesso em (data de aceso)
  
 
 # Acesso ao método e plano de ação para apoio à implementação
