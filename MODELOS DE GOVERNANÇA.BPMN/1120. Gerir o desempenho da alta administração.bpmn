@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1x1lof2" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_1dr5z8x">
+    <bpmn:participant id="Participant_1ho4a0t" name="1120. Gerir o desempenho da alta administração" processRef="Process_1vr8jmb" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1vr8jmb" isExecutable="false">
+    <bpmn:startEvent id="Event_169d05m">
+      <bpmn:outgoing>Flow_170009h</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_15pvu25" sourceRef="Activity_1c7pbzf" targetRef="Event_0kjd3yv" />
+    <bpmn:sequenceFlow id="Flow_0kel36r" sourceRef="Activity_1lo42x0" targetRef="Activity_1c7pbzf" />
+    <bpmn:sequenceFlow id="Flow_170009h" sourceRef="Event_169d05m" targetRef="Activity_1lo42x0" />
+    <bpmn:subProcess id="Activity_1c7pbzf" name="Avaliar o desempenho do membro">
+      <bpmn:incoming>Flow_0kel36r</bpmn:incoming>
+      <bpmn:outgoing>Flow_15pvu25</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:endEvent id="Event_0kjd3yv">
+      <bpmn:incoming>Flow_15pvu25</bpmn:incoming>
+      <bpmn:terminateEventDefinition id="TerminateEventDefinition_1svp4y9" />
+    </bpmn:endEvent>
+    <bpmn:subProcess id="Activity_1lo42x0" name="Selecionar membros da Alta Adm.">
+      <bpmn:incoming>Flow_170009h</bpmn:incoming>
+      <bpmn:outgoing>Flow_0kel36r</bpmn:outgoing>
+    </bpmn:subProcess>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1dr5z8x">
+      <bpmndi:BPMNShape id="Participant_1ho4a0t_di" bpmnElement="Participant_1ho4a0t" isHorizontal="true">
+        <dc:Bounds x="179" y="80" width="731" height="170" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_170009h_di" bpmnElement="Flow_170009h">
+        <di:waypoint x="307" y="160" />
+        <di:waypoint x="400" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0kel36r_di" bpmnElement="Flow_0kel36r">
+        <di:waypoint x="500" y="160" />
+        <di:waypoint x="580" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15pvu25_di" bpmnElement="Flow_15pvu25">
+        <di:waypoint x="680" y="160" />
+        <di:waypoint x="802" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_169d05m_di" bpmnElement="Event_169d05m">
+        <dc:Bounds x="271" y="142" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04z91f5_di" bpmnElement="Activity_1c7pbzf">
+        <dc:Bounds x="580" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0j8iny1_di" bpmnElement="Event_0kjd3yv">
+        <dc:Bounds x="802" y="142" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_13af8e8_di" bpmnElement="Activity_1lo42x0">
+        <dc:Bounds x="400" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
