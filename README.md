@@ -110,7 +110,7 @@ Diagrama 13.4. Processo: Avaliar as ações educacionais realizadas (4154)
 
 Diagrama 14. Macroprocesso: Construir e manter ambiente de trabalho ético e favorável (4160)	
 
-Diagrama 14.1. Subprocesso: Estabelecer Programa de qualidade de vida no trabalho (4160.1)	
+Diagrama 14.1. Processo: Estabelecer Programa de qualidade de vida no trabalho (4160.1)	
 
 Diagrama 14.2. Processo: Estabelecer Código de ética e de conduta (4161)	
 
