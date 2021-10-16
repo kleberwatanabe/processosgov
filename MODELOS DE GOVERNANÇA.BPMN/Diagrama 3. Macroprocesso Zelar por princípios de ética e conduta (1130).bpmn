@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_06cw93f" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_0dked3e">
+    <bpmn:participant id="Participant_0oppur5" name="1130 - Zelar por princípios de ética e conduta" processRef="Process_0g8zo0i" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0g8zo0i" isExecutable="false">
+    <bpmn:sequenceFlow id="Flow_1vz4pv8" sourceRef="Gateway_07fycuj" targetRef="Activity_148hwoj" />
+    <bpmn:sequenceFlow id="Flow_098l3mj" sourceRef="Gateway_07fycuj" targetRef="Activity_1qm8y73" />
+    <bpmn:sequenceFlow id="Flow_1egarso" sourceRef="Event_0k8d088" targetRef="Gateway_07fycuj" />
+    <bpmn:sequenceFlow id="Flow_0exrclh" sourceRef="Activity_148hwoj" targetRef="Event_1itq0iu" />
+    <bpmn:sequenceFlow id="Flow_0zo48pr" sourceRef="Activity_1qm8y73" targetRef="Event_1itq0iu" />
+    <bpmn:subProcess id="Activity_148hwoj" name="Identificar os casos de conflito de interesse">
+      <bpmn:incoming>Flow_1vz4pv8</bpmn:incoming>
+      <bpmn:outgoing>Flow_0exrclh</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:parallelGateway id="Gateway_07fycuj">
+      <bpmn:incoming>Flow_1egarso</bpmn:incoming>
+      <bpmn:outgoing>Flow_098l3mj</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1vz4pv8</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:startEvent id="Event_0k8d088">
+      <bpmn:outgoing>Flow_1egarso</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:subProcess id="Activity_1qm8y73" name="Estabelecer Código de ética e de conduta">
+      <bpmn:incoming>Flow_098l3mj</bpmn:incoming>
+      <bpmn:outgoing>Flow_0zo48pr</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:endEvent id="Event_1itq0iu">
+      <bpmn:incoming>Flow_0exrclh</bpmn:incoming>
+      <bpmn:incoming>Flow_0zo48pr</bpmn:incoming>
+      <bpmn:terminateEventDefinition id="TerminateEventDefinition_12j250t" />
+    </bpmn:endEvent>
+    <bpmn:textAnnotation id="TextAnnotation_1a89ny8">
+      <bpmn:text>De membros da Alta Administração e de Conselhos Superiores</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0g2zbi9" sourceRef="Activity_148hwoj" targetRef="TextAnnotation_1a89ny8" />
+    <bpmn:association id="Association_1b1v0ia" sourceRef="Activity_1qm8y73" targetRef="TextAnnotation_1a89ny8" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0dked3e">
+      <bpmndi:BPMNShape id="Participant_0oppur5_di" bpmnElement="Participant_0oppur5" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="830" height="270" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1a89ny8_di" bpmnElement="TextAnnotation_1a89ny8">
+        <dc:Bounds x="500" y="190" width="220" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0zo48pr_di" bpmnElement="Flow_0zo48pr">
+        <di:waypoint x="800" y="200" />
+        <di:waypoint x="800" y="252" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0exrclh_di" bpmnElement="Flow_0exrclh">
+        <di:waypoint x="470" y="270" />
+        <di:waypoint x="782" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1egarso_di" bpmnElement="Flow_1egarso">
+        <di:waypoint x="268" y="160" />
+        <di:waypoint x="395" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_098l3mj_di" bpmnElement="Flow_098l3mj">
+        <di:waypoint x="445" y="160" />
+        <di:waypoint x="750" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vz4pv8_di" bpmnElement="Flow_1vz4pv8">
+        <di:waypoint x="420" y="185" />
+        <di:waypoint x="420" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0k8d088_di" bpmnElement="Event_0k8d088">
+        <dc:Bounds x="232" y="142" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_195f3a4_di" bpmnElement="Gateway_07fycuj">
+        <dc:Bounds x="395" y="135" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0c5z3sw_di" bpmnElement="Event_1itq0iu">
+        <dc:Bounds x="782" y="252" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pmdczq_di" bpmnElement="Activity_148hwoj">
+        <dc:Bounds x="370" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08munez_di" bpmnElement="Activity_1qm8y73">
+        <dc:Bounds x="750" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0g2zbi9_di" bpmnElement="Association_0g2zbi9">
+        <di:waypoint x="470" y="245" />
+        <di:waypoint x="500" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1b1v0ia_di" bpmnElement="Association_1b1v0ia">
+        <di:waypoint x="750" y="181" />
+        <di:waypoint x="720" y="193" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

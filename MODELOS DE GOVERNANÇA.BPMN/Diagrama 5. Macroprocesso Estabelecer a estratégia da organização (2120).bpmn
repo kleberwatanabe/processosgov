@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1ckpr2x" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_041crbd">
+    <bpmn:participant id="Participant_1ng4f7r" name="2120. Estabelecer a estratégia da organização" processRef="Process_0evmnnw" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0evmnnw" isExecutable="false">
+    <bpmn:startEvent id="Event_1ejcy0k">
+      <bpmn:outgoing>Flow_1l0f33b</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_1q2ddm2">
+      <bpmn:incoming>Flow_0zn07k4</bpmn:incoming>
+      <bpmn:terminateEventDefinition id="TerminateEventDefinition_1pprxm3" />
+    </bpmn:endEvent>
+    <bpmn:subProcess id="Activity_1ke3z97">
+      <bpmn:incoming>Flow_1l0f33b</bpmn:incoming>
+      <bpmn:outgoing>Flow_1b23k0v</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Activity_1ilmibe">
+      <bpmn:incoming>Flow_1b23k0v</bpmn:incoming>
+      <bpmn:outgoing>Flow_11akbm8</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Activity_0m7u8hr">
+      <bpmn:incoming>Flow_11akbm8</bpmn:incoming>
+      <bpmn:outgoing>Flow_0zn07k4</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_0zn07k4" sourceRef="Activity_0m7u8hr" targetRef="Event_1q2ddm2" />
+    <bpmn:sequenceFlow id="Flow_11akbm8" name="Identificar, as demandas das partes interessadas" sourceRef="Activity_1ilmibe" targetRef="Activity_0m7u8hr" />
+    <bpmn:sequenceFlow id="Flow_1b23k0v" name="Identificar e mapear os principais processos da organização" sourceRef="Activity_1ke3z97" targetRef="Activity_1ilmibe" />
+    <bpmn:sequenceFlow id="Flow_1l0f33b" name="Definir o modelo de gestão estratégica" sourceRef="Event_1ejcy0k" targetRef="Activity_1ke3z97" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_041crbd">
+      <bpmndi:BPMNShape id="Participant_1ng4f7r_di" bpmnElement="Participant_1ng4f7r" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="690" height="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0zn07k4_di" bpmnElement="Flow_0zn07k4">
+        <di:waypoint x="740" y="200" />
+        <di:waypoint x="792" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11akbm8_di" bpmnElement="Flow_11akbm8">
+        <di:waypoint x="580" y="200" />
+        <di:waypoint x="640" y="200" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="653" y="253" width="73" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1b23k0v_di" bpmnElement="Flow_1b23k0v">
+        <di:waypoint x="420" y="200" />
+        <di:waypoint x="480" y="200" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="497" y="247" width="66" height="66" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1l0f33b_di" bpmnElement="Flow_1l0f33b">
+        <di:waypoint x="268" y="200" />
+        <di:waypoint x="320" y="200" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="329" y="250" width="81" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1ejcy0k_di" bpmnElement="Event_1ejcy0k">
+        <dc:Bounds x="232" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_02zmudo_di" bpmnElement="Event_1q2ddm2">
+        <dc:Bounds x="792" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_05vu53m_di" bpmnElement="Activity_1ke3z97">
+        <dc:Bounds x="320" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0cmwjon_di" bpmnElement="Activity_1ilmibe">
+        <dc:Bounds x="480" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03ke7wj_di" bpmnElement="Activity_0m7u8hr">
+        <dc:Bounds x="640" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
