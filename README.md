@@ -173,7 +173,7 @@ Diagrama 27. Macroprocesso: Prestar serviços públicos em meio digital com qual
 
 # Como referenciar os diagramas (ABNT NBR 6023:2018):
 
-MARTINS, K. W. C. (nome do processo). Diagrama de Processo. (ano do último update). Disponível em: https://github.com/kleberwatanabe/processosgov Acesso em (data de aceso)
+MARTINS, K. W. C. (nome do processo). Diagrama de Processo. (ano do último update). Disponível em: https://github.com/kleberwatanabe/processosgov Acesso em (data de acesso)
  
 
 # Acesso ao método e plano de ação para apoio à implementação
