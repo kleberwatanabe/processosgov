@@ -12,7 +12,11 @@ Repositório de diagramas de processos de governança e gestão pública, elabor
 Ordenação hierárquica dos diagramas: 
 
 
-Macroprocessos >>  Processos >>  Subprocessos  
+Macroprocessos 
+
+     Processos 
+      
+        Subprocessos  
 
 
 
