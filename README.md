@@ -178,9 +178,10 @@ MARTINS, K. W. C. (nome do processo). Diagrama de Processo. (ano do último upda
 
 # Acesso ao método e plano de ação para apoio à implementação
 
- 
+ Questionário utilizado no Levantamento Integrado de Governança e Gestão Públicas do TCU - Ciclo 2018, disponível em: https://portal.tcu.gov.br/governanca/governancapublica/organizacional/levantamento-de-governanca/levantamento-de-governanca.htm
 
-(em breve)
+
+(Plano de Ação em breve)
 
  
 
