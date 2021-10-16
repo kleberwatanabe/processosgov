@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1xq148x" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_1p806de">
+    <bpmn:participant id="Participant_0ku9104" name="4120. Definir adequadamente, em termos qualitativos e quantitativos, a demanda por colaboradores e gestores" processRef="Process_090invo" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_090invo" isExecutable="false">
+    <bpmn:startEvent id="Event_0kmhps1">
+      <bpmn:outgoing>Flow_00oah45</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:subProcess id="Activity_0zfiob1">
+      <bpmn:incoming>Flow_00oah45</bpmn:incoming>
+      <bpmn:outgoing>Flow_1fxpyzm</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Activity_010bhis">
+      <bpmn:incoming>Flow_1fxpyzm</bpmn:incoming>
+      <bpmn:outgoing>Flow_00y8wlf</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Activity_0li088t">
+      <bpmn:incoming>Flow_00y8wlf</bpmn:incoming>
+      <bpmn:outgoing>Flow_0vocy5b</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_0vocy5b" sourceRef="Activity_0li088t" targetRef="Event_1mx7688" />
+    <bpmn:sequenceFlow id="Flow_00y8wlf" name="Atualizar o quantitativo necessário de pessoal" sourceRef="Activity_010bhis" targetRef="Activity_0li088t" />
+    <bpmn:sequenceFlow id="Flow_1fxpyzm" name="Definir e documentar os perfis profissionais desejados para cada ocupação" sourceRef="Activity_0zfiob1" targetRef="Activity_010bhis" />
+    <bpmn:sequenceFlow id="Flow_00oah45" name="Estabelecer política que orienta o planejamento da força de trabalho" sourceRef="Event_0kmhps1" targetRef="Activity_0zfiob1" />
+    <bpmn:endEvent id="Event_1mx7688">
+      <bpmn:incoming>Flow_0vocy5b</bpmn:incoming>
+      <bpmn:terminateEventDefinition id="TerminateEventDefinition_0m803u0" />
+    </bpmn:endEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1p806de">
+      <bpmndi:BPMNShape id="Participant_0ku9104_di" bpmnElement="Participant_0ku9104" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="710" height="320" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_00oah45_di" bpmnElement="Flow_00oah45">
+        <di:waypoint x="268" y="220" />
+        <di:waypoint x="330" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="648" y="267" width="83" height="66" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fxpyzm_di" bpmnElement="Flow_1fxpyzm">
+        <di:waypoint x="430" y="220" />
+        <di:waypoint x="480" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="342" y="267" width="76" height="80" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_00y8wlf_di" bpmnElement="Flow_00y8wlf">
+        <di:waypoint x="580" y="220" />
+        <di:waypoint x="640" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="495" y="273" width="70" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0vocy5b_di" bpmnElement="Flow_0vocy5b">
+        <di:waypoint x="740" y="220" />
+        <di:waypoint x="782" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0kmhps1_di" bpmnElement="Event_0kmhps1">
+        <dc:Bounds x="232" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_08f13hp_di" bpmnElement="Event_1mx7688">
+        <dc:Bounds x="782" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_12rc0ut_di" bpmnElement="Activity_0zfiob1">
+        <dc:Bounds x="330" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rocqwk_di" bpmnElement="Activity_010bhis">
+        <dc:Bounds x="480" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0desret_di" bpmnElement="Activity_0li088t">
+        <dc:Bounds x="640" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
