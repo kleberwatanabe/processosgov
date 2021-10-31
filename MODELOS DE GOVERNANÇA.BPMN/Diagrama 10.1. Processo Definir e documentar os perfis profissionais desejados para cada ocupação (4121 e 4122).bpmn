@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1xq148x" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_1p806de">
+    <bpmn:participant id="Participant_1x10o5u" name="4120. Definir e documentar os perfis profissionais desejados para cada ocupação (4121 e 4122)" processRef="Process_0hcd9l7" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0hcd9l7" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_1qva1df">
+      <bpmn:lane id="Lane_1eg6oln" name="Unidade de gestão de pessoas">
+        <bpmn:flowNodeRef>Event_1dunbcz</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1xn3pfa</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_163ioau</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1np5t94</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0qmv7vh</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0h612in" name="Área de gestão de pessoas / de contratações / de tTI / finalística">
+        <bpmn:flowNodeRef>Activity_1jb45ig</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_102n4w9</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0dt54q8</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Event_1dunbcz">
+      <bpmn:outgoing>Flow_1rmpnoi</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1xn3pfa" name="Disponibilizar formulários para as áreas específicas preencherem">
+      <bpmn:incoming>Flow_1rmpnoi</bpmn:incoming>
+      <bpmn:outgoing>Flow_025vixe</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1jb45ig" name="Analisar tarefas que são desempenha-das no setor">
+      <bpmn:incoming>Flow_025vixe</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qzupnz</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0extcz4" sourceRef="Activity_163ioau" targetRef="Activity_1np5t94" />
+    <bpmn:sequenceFlow id="Flow_0m92hzi" sourceRef="Activity_1np5t94" targetRef="Event_0qmv7vh" />
+    <bpmn:sequenceFlow id="Flow_1rmpnoi" sourceRef="Event_1dunbcz" targetRef="Activity_1xn3pfa" />
+    <bpmn:sequenceFlow id="Flow_1ihhen6" sourceRef="Activity_102n4w9" targetRef="Activity_163ioau" />
+    <bpmn:sequenceFlow id="Flow_1604cwt" sourceRef="Activity_0dt54q8" targetRef="Activity_102n4w9" />
+    <bpmn:sequenceFlow id="Flow_0qzupnz" sourceRef="Activity_1jb45ig" targetRef="Activity_0dt54q8" />
+    <bpmn:sequenceFlow id="Flow_025vixe" sourceRef="Activity_1xn3pfa" targetRef="Activity_1jb45ig" />
+    <bpmn:task id="Activity_102n4w9" name="Preencher  formulário disponibilizado">
+      <bpmn:incoming>Flow_1604cwt</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ihhen6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_163ioau" name="Consolidar as informações dos formulários preenchidos">
+      <bpmn:incoming>Flow_1ihhen6</bpmn:incoming>
+      <bpmn:outgoing>Flow_0extcz4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1np5t94" name="Documentar os perfis profissionais desejáveis">
+      <bpmn:incoming>Flow_0extcz4</bpmn:incoming>
+      <bpmn:outgoing>Flow_0m92hzi</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1b6ddx2">
+        <bpmn:targetRef>DataStoreReference_077czth</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0qmv7vh">
+      <bpmn:incoming>Flow_0m92hzi</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:dataStoreReference id="DataStoreReference_077czth" name="Base de Conhecimento" />
+    <bpmn:task id="Activity_0dt54q8" name="Definir o perfil profissional desejado">
+      <bpmn:incoming>Flow_0qzupnz</bpmn:incoming>
+      <bpmn:outgoing>Flow_1604cwt</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:textAnnotation id="TextAnnotation_0ve2k9a">
+      <bpmn:text>Para gestores e colaboradores com base na Política de Gestão de Pessoas</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0f2r3d5" sourceRef="Activity_1xn3pfa" targetRef="TextAnnotation_0ve2k9a" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1p806de">
+      <bpmndi:BPMNShape id="Participant_1x10o5u_di" bpmnElement="Participant_1x10o5u" isHorizontal="true">
+        <dc:Bounds x="170" y="80" width="930" height="410" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0h612in_di" bpmnElement="Lane_0h612in" isHorizontal="true">
+        <dc:Bounds x="200" y="300" width="900" height="190" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1eg6oln_di" bpmnElement="Lane_1eg6oln" isHorizontal="true">
+        <dc:Bounds x="200" y="80" width="900" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0ve2k9a_di" bpmnElement="TextAnnotation_0ve2k9a">
+        <dc:Bounds x="480" y="120" width="180" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_025vixe_di" bpmnElement="Flow_025vixe">
+        <di:waypoint x="420" y="270" />
+        <di:waypoint x="420" y="340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qzupnz_di" bpmnElement="Flow_0qzupnz">
+        <di:waypoint x="470" y="380" />
+        <di:waypoint x="530" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1604cwt_di" bpmnElement="Flow_1604cwt">
+        <di:waypoint x="630" y="380" />
+        <di:waypoint x="690" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ihhen6_di" bpmnElement="Flow_1ihhen6">
+        <di:waypoint x="740" y="340" />
+        <di:waypoint x="740" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rmpnoi_di" bpmnElement="Flow_1rmpnoi">
+        <di:waypoint x="298" y="230" />
+        <di:waypoint x="370" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0m92hzi_di" bpmnElement="Flow_0m92hzi">
+        <di:waypoint x="950" y="230" />
+        <di:waypoint x="1002" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0extcz4_di" bpmnElement="Flow_0extcz4">
+        <di:waypoint x="790" y="230" />
+        <di:waypoint x="850" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1dunbcz_di" bpmnElement="Event_1dunbcz">
+        <dc:Bounds x="262" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="251" y="120" width="76" height="80" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xn3pfa_di" bpmnElement="Activity_1xn3pfa">
+        <dc:Bounds x="370" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1jb45ig_di" bpmnElement="Activity_1jb45ig">
+        <dc:Bounds x="370" y="340" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_102n4w9_di" bpmnElement="Activity_102n4w9">
+        <dc:Bounds x="690" y="340" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_163ioau_di" bpmnElement="Activity_163ioau">
+        <dc:Bounds x="690" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1np5t94_di" bpmnElement="Activity_1np5t94">
+        <dc:Bounds x="850" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0qmv7vh_di" bpmnElement="Event_0qmv7vh">
+        <dc:Bounds x="1002" y="212" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_077czth_di" bpmnElement="DataStoreReference_077czth">
+        <dc:Bounds x="795" y="105" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="864" y="116" width="72" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dt54q8_di" bpmnElement="Activity_0dt54q8">
+        <dc:Bounds x="530" y="340" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0f2r3d5_di" bpmnElement="Association_0f2r3d5">
+        <di:waypoint x="455" y="190" />
+        <di:waypoint x="480" y="163" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1b6ddx2_di" bpmnElement="DataOutputAssociation_1b6ddx2">
+        <di:waypoint x="872" y="190" />
+        <di:waypoint x="835" y="155" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
