@@ -62,9 +62,9 @@ Diagrama 5. Macroprocesso: Estabelecer a estratégia da organização (2120)
 
     Diagrama 5.3. Processo: Identificar, as demandas das partes interessadas (2124)	
 
-        Diagrama 5.4 Subprocesso: Avaliar as demandas dos órgãos de controle (2124.c)	
+        Diagrama 5.3.1 Subprocesso: Avaliar as demandas dos órgãos de controle (2124.c)	
 
-        Diagrama 5.5. Subprocesso: Avaliar as expectativas da sociedade (2124.d)	
+        Diagrama 5.3.2 Subprocesso: Avaliar as expectativas da sociedade (2124.d)	
 
 Diagrama 6. Macroprocesso: Promover a gestão estratégica (2130)	
 
@@ -76,9 +76,9 @@ Diagrama 7. Macroprocesso: Promover transparência, responsabilidade e prestaç�
 
     Diagrama 7.1. Processo: Estabelecer o canal de denúncias e representações (3114)	
 
-        Diagrama 7.2. Subprocesso: Receber, examinar e encaminhar denúncias e representações (3114.1)
+        Diagrama 7.1.1. Subprocesso: Receber, examinar e encaminhar denúncias e representações (3114.1)
 
-    Diagrama 7.3. Processo: Publicar conjuntos de dados de forma aderente aos princípios de dados abertos (3115)	
+    Diagrama 7.2. Processo: Publicar conjuntos de dados de forma aderente aos princípios de dados abertos (3115)	
 
 Diagrama 8. Macroprocesso: Assegurar a efetiva atuação da auditoria interna (3120)	
 
